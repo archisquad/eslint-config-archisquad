@@ -80,7 +80,7 @@
   "devDependencies": {
     "@archisquad/prettier-config": "1.0.0",
     "@changesets/cli": "2.26.2",
-    "@commitlint/cli": "17.8.1",
+    "@commitlint/cli": "18.4.3",
     "commitlint-config-gitmoji": "2.3.1",
     "gitmoji-cli": "8.5.0",
     "husky": "8.0.3",
