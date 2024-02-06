@@ -20,7 +20,7 @@
   "scripts": {
     "lint": "eslint --fix .",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "keywords": [
     "eslint",
