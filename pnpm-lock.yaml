@@ -48,8 +48,8 @@ dependencies:
     specifier: 16.6.2
     version: 16.6.2(eslint@8.56.0)
   eslint-plugin-no-secrets:
-    specifier: 0.8.9
-    version: 0.8.9(eslint@8.56.0)
+    specifier: 1.0.2
+    version: 1.0.2(eslint@8.56.0)
   eslint-plugin-no-unsanitized:
     specifier: 4.0.2
     version: 4.0.2(eslint@8.56.0)
@@ -2387,8 +2387,8 @@ packages:
       semver: 7.5.4
     dev: false
 
-  /eslint-plugin-no-secrets@0.8.9(eslint@8.56.0):
-    resolution: {integrity: sha512-CqaBxXrImABCtxMWspAnm8d5UKkpNylC7zqVveb+fJHEvsSiNGJlSWzdSIvBUnW1XhJXkzifNIZQC08rEII5Ng==}
+  /eslint-plugin-no-secrets@1.0.2(eslint@8.56.0):
+    resolution: {integrity: sha512-lXjGcPS6ZMxAouYWsuX5NGsLlOWQ5c+YFHHZFECzRCZIssYQgWVPINgZqAU7caquB32MoEAL+dXRQNDBX0fgwQ==}
     engines: {node: '>=10.0.0', npm: '>=6.9.0'}
     peerDependencies:
       eslint: '>=3.0.0'
