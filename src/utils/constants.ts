@@ -11,3 +11,17 @@ export const TS_FILES = [
   '**/*.cts',
   '**/*.mts',
 ]
+
+export const MD_FILES = [
+  '**/*.md',
+  '**/*.mdx',
+]
+
+export const YAML_FILES = [
+  '**/*.yaml',
+  '**/*.yml',
+]
+
+export const JSON_FILES = [
+  '**/*.json',
+]

@@ -1,5 +1,6 @@
 import type { Linter } from "eslint";
 
+
 type Flag = boolean
 type Paths = string | string[]
 type FlagOrPaths = Flag | Paths
@@ -16,6 +17,24 @@ export type TypescriptConfig = {
   files: string[];
 }
 
+export type MarkdownConfig = {
+  files: string[];
+}
+
+export type YamlConfig = {
+  files: string[];
+  prettier: boolean;
+}
+
+export type YamlConfigInput = Omit<YamlConfig, "prettier">
+
+export type JsonConfig = {
+  files: string[];
+  prettier: boolean;
+}
+
+export type JsonConfigInput = Omit<JsonConfig, "prettier">
+
 export type Config = {
   features: {
     promise: Flag
@@ -24,12 +43,11 @@ export type Config = {
   }
   language: {
     typescript: FlagOrConfig<TypescriptConfig>
-    yaml: Flag
-    json: FlagOrPaths
-    html: FlagOrPaths
-    markdown: FlagOrPaths
+    yaml: FlagOrConfig<YamlConfigInput>
+    json: FlagOrConfig<JsonConfigInput>
+    markdown: FlagOrConfig<MarkdownConfig>
   }
-  prettier: FlagOrPaths
+  prettier: Flag
   frameworks: {
     node: FlagOrConfig<NodeConfig>
     vue: FlagOrPaths
