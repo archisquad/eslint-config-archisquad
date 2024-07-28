@@ -1,6 +1,5 @@
-import type { FactoryConfig, PlaywrightConfig } from "../types";
-import playwright from "eslint-plugin-playwright";
-
+import type { FactoryConfig, PlaywrightConfig } from "../types"
+import playwright from "eslint-plugin-playwright"
 
 export const playwrightConfig: FactoryConfig<PlaywrightConfig> = (config) => ({
   name: "frameworks/playwright",

@@ -1,8 +1,17 @@
-import { Config, FlagOrConfig, JsonConfig, VitestConfig, YamlConfig, YamlConfigInput } from "../types";
-import { jsonDefaultConfig, yamlDefaultConfig } from "./defaultConfigs";
+import {
+  Config,
+  FlagOrConfig,
+  JsonConfig,
+  VitestConfig,
+  YamlConfig,
+} from "../types"
+import { jsonDefaultConfig, yamlDefaultConfig } from "./defaultConfigs"
 
-export function configResolver<TConfig>(value: FlagOrConfig<TConfig>, defaultConfig: TConfig) {
-  return typeof value === 'boolean' ? defaultConfig : value
+export function configResolver<TConfig>(
+  value: FlagOrConfig<TConfig>,
+  defaultConfig: TConfig
+): TConfig {
+  return typeof value === "boolean" ? defaultConfig : value
 }
 
 export function yamlConfigResolver(config: Config): YamlConfig {

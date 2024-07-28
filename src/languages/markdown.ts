@@ -1,11 +1,11 @@
-import { FactoryConfig, MarkdownConfig } from "../types";
+import { FactoryConfig, MarkdownConfig } from "../types"
 // @ts-expect-error -- no types available
-import markdownPlugin from "eslint-plugin-markdown";
+import markdownPlugin from "eslint-plugin-markdown"
 
 export const markdownConfig: FactoryConfig<MarkdownConfig> = (config) => ({
   files: config.files,
   plugins: {
-    markdown: markdownPlugin
+    markdown: markdownPlugin,
   },
   processor: "markdown/markdown",
   rules: {
@@ -27,6 +27,6 @@ export const markdownConfig: FactoryConfig<MarkdownConfig> = (config) => ({
 
     // The processor will not receive a Unicode Byte Order
     // Mark from the Markdown parser.
-    "unicode-bom": "off"
-  }
+    "unicode-bom": "off",
+  },
 })

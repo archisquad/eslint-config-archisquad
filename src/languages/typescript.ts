@@ -1,7 +1,6 @@
-import type { FactoryConfig, TypescriptConfig } from "../types";
-import pluginTs from '@typescript-eslint/eslint-plugin';
-import parserTs from '@typescript-eslint/parser';
-
+import type { FactoryConfig, TypescriptConfig } from "../types"
+import pluginTs from "@typescript-eslint/eslint-plugin"
+import parserTs from "@typescript-eslint/parser"
 
 export const typescriptConfig: FactoryConfig<TypescriptConfig> = (config) => ({
   name: "languages/typescript",
@@ -10,6 +9,7 @@ export const typescriptConfig: FactoryConfig<TypescriptConfig> = (config) => ({
     parser: parserTs,
   },
   plugins: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     "@typescript-eslint": pluginTs as any,
   },
   rules: {

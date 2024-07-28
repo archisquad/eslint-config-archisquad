@@ -1,5 +1,4 @@
-import type { Linter } from "eslint";
-
+import type { Linter } from "eslint"
 
 type Flag = boolean
 type Paths = string | string[]
@@ -7,41 +6,43 @@ type FlagOrPaths = Flag | Paths
 export type FlagOrConfig<TConfig> = Flag | TConfig
 
 type FactoryConfigArgs<T> = T extends undefined ? [] : [config: T]
-export type FactoryConfig<T = undefined> = (...args: FactoryConfigArgs<T>) => Linter.FlatConfig
+export type FactoryConfig<T = undefined> = (
+  ...args: FactoryConfigArgs<T>
+) => Linter.FlatConfig
 
 export type NodeConfig = {
-  files: string[];
+  files: string[]
 }
 
 export type TypescriptConfig = {
-  files: string[];
+  files: string[]
 }
 
 export type MarkdownConfig = {
-  files: string[];
+  files: string[]
 }
 
 export type YamlConfig = {
-  files: string[];
-  prettier: boolean;
+  files: string[]
+  prettier: boolean
 }
 
 export type YamlConfigInput = Omit<YamlConfig, "prettier">
 
 export type JsonConfig = {
-  files: string[];
-  prettier: boolean;
+  files: string[]
+  prettier: boolean
 }
 
 export type JsonConfigInput = Omit<JsonConfig, "prettier">
 
 export type PlaywrightConfig = {
-  files: string[];
+  files: string[]
 }
 
 export type VitestConfig = {
-  files: string[];
-  typescript: boolean;
+  files: string[]
+  typescript: boolean
 }
 
 export type VitestConfigInput = Omit<VitestConfig, "typescript">

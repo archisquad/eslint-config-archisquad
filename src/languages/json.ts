@@ -1,10 +1,10 @@
-import type { FactoryConfig, JsonConfig } from '../types';
-import jsonPlugin from "eslint-plugin-jsonc";
-import jsonParser from 'jsonc-eslint-parser';
+import type { FactoryConfig, JsonConfig } from "../types"
+import jsonPlugin from "eslint-plugin-jsonc"
+import jsonParser from "jsonc-eslint-parser"
 
 export const jsonConfig: FactoryConfig<JsonConfig> = (config) => {
   const formattingRules = config.prettier
-    ? {
+    ? ({
         "jsonc/array-bracket-newline": "off",
         "jsonc/array-bracket-spacing": "off",
         "jsonc/array-element-newline": "off",
@@ -19,25 +19,25 @@ export const jsonConfig: FactoryConfig<JsonConfig> = (config) => {
         "jsonc/quote-props": "off",
         "jsonc/quotes": "off",
         "jsonc/space-unary-ops": "off",
-      } as const
-    : {
+      } as const)
+    : ({
         "jsonc/comma-dangle": "error",
         "jsonc/no-floating-decimal": "error",
         "jsonc/quote-props": "error",
         "jsonc/quotes": "error",
         "jsonc/space-unary-ops": "error",
-      } as const
+      } as const)
 
   return {
     files: config.files,
     plugin: {
-      'jsonc': jsonPlugin,
+      jsonc: jsonPlugin,
     },
     languageOptions: {
       parser: jsonParser,
     },
     rules: {
-      strict: "off",
+      "strict": "off",
       "no-unused-expressions": "off",
       "no-unused-vars": "off",
       "jsonc/no-bigint-literals": "error",
@@ -65,6 +65,6 @@ export const jsonConfig: FactoryConfig<JsonConfig> = (config) => {
       "jsonc/valid-json-number": "error",
       "jsonc/vue-custom-block/no-parsing-error": "error",
       ...formattingRules,
-    }
+    },
   }
 }

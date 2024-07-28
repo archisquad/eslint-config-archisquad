@@ -1,5 +1,16 @@
-import type { JsonConfig, NodeConfig, TypescriptConfig, YamlConfig } from "../types";
-import { JS_FILES, JSON_FILES, MD_FILES, TS_FILES, YAML_FILES } from "./constants";
+import type {
+  JsonConfig,
+  NodeConfig,
+  TypescriptConfig,
+  YamlConfig,
+} from "../types"
+import {
+  JSON_FILES,
+  JS_FILES,
+  MD_FILES,
+  TS_FILES,
+  YAML_FILES,
+} from "./constants"
 
 export const nodeDefaultConfig: NodeConfig = {
   files: JS_FILES,

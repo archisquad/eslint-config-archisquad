@@ -1,15 +1,15 @@
 // @ts-expect-error -- promise plugin is not typed
-import pluginPromise from 'eslint-plugin-promise';
-import type { FactoryConfig } from '../types';
+import type { FactoryConfig } from "../types"
+import pluginPromise from "eslint-plugin-promise"
 
 export const promiseConfig: FactoryConfig = () => ({
-  name: 'features/promise',
+  name: "features/promise",
   plugins: {
     promise: pluginPromise,
   },
-  ...pluginPromise.configs['flat/recommended'],
+  ...pluginPromise.configs["flat/recommended"],
   rules: {
     "promise/prefer-await-to-then": "warn",
     "promise/valid-params": "error",
-  }
+  },
 })

@@ -1,5 +1,5 @@
-import type { FactoryConfig, NodeConfig } from "../types";
-import nPlugin from "eslint-plugin-n";
+import type { FactoryConfig, NodeConfig } from "../types"
+import nPlugin from "eslint-plugin-n"
 
 export const nodeConfig: FactoryConfig<NodeConfig> = (config) => ({
   name: "languages/node",

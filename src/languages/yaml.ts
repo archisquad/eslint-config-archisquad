@@ -1,11 +1,10 @@
-import type { FactoryConfig, YamlConfig } from "../types";
-import ymlPlugin from "eslint-plugin-yml";
-import ymlParser from "yaml-eslint-parser";
+import type { FactoryConfig, YamlConfig } from "../types"
+import ymlPlugin from "eslint-plugin-yml"
+import ymlParser from "yaml-eslint-parser"
 
 export const yamlConfig: FactoryConfig<YamlConfig> = (config) => {
-
   const formattingRules = config.prettier
-    ? {
+    ? ({
         "yml/block-mapping-question-indicator-newline": "error",
         "yml/block-sequence-hyphen-indicator-newline": "error",
         "yml/flow-mapping-curly-newline": "error",
@@ -15,8 +14,8 @@ export const yamlConfig: FactoryConfig<YamlConfig> = (config) => {
         "yml/indent": "error",
         "yml/key-spacing": "error",
         "yml/quotes": "error",
-      } as const
-    : {
+      } as const)
+    : ({
         "yml/block-mapping-colon-indicator-newline": "off",
         "yml/block-mapping-question-indicator-newline": "off",
         "yml/block-sequence-hyphen-indicator-newline": "off",
@@ -29,11 +28,12 @@ export const yamlConfig: FactoryConfig<YamlConfig> = (config) => {
         "yml/no-multiple-empty-lines": "off",
         "yml/no-trailing-zeros": "off",
         "yml/quotes": "off",
-      } as const
+      } as const)
 
   return {
     files: config.files,
     plugins: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       yml: ymlPlugin as any,
     },
     languageOptions: {
@@ -58,6 +58,6 @@ export const yamlConfig: FactoryConfig<YamlConfig> = (config) => {
       "yml/plain-scalar": "error",
       "yml/spaced-comment": "error",
       ...formattingRules,
-    }
+    },
   }
 }

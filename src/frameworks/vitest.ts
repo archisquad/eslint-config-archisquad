@@ -1,9 +1,9 @@
-import type { FactoryConfig, VitestConfig } from "../types";
-import vitestPlugin from "eslint-plugin-vitest";
+import type { FactoryConfig, VitestConfig } from "../types"
+import vitestPlugin from "eslint-plugin-vitest"
 
 export const vitestConfig: FactoryConfig<VitestConfig> = (config) => {
   const extraRulesOff = config.typescript
-    ? {
+    ? ({
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unsafe-argument": "warn",
         "@typescript-eslint/no-unsafe-call": "warn",
@@ -18,7 +18,7 @@ export const vitestConfig: FactoryConfig<VitestConfig> = (config) => {
         "@typescript-eslint/require-await": "warn",
         // In unit & integration tests often creates a lot of noise
         "@typescript-eslint/explicit-function-return-type": "off",
-      } as const
+      } as const)
     : {}
 
   return {
