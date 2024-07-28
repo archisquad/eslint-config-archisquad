@@ -15,95 +15,76 @@ import {
 import gitignore from "eslint-config-flat-gitignore"
 import { composer } from "eslint-flat-config-utils"
 
-export function configFactory(config: Config): ReturnType<typeof composer> {
+export async function configFactory(
+  config: Config
+): Promise<ReturnType<typeof composer>> {
   const composition = composer()
 
   composition.append(gitignore(), ecmaConfig(), unicornConfig())
 
   if (config?.prettier) {
-    composition.append(
-      import("./common/prettier").then((module) => module.prettierConfig())
-    )
+    const { prettierConfig } = await import("./common/prettier")
+    composition.append(prettierConfig())
   }
 
   if (config?.features?.promise) {
-    composition.append(
-      import("./features/promise").then((module) => module.promiseConfig())
-    )
+    const { promiseConfig } = await import("./features/promise")
+    composition.append(promiseConfig())
   }
 
   if (config?.features?.secrets) {
-    composition.append(
-      import("./features/secrets").then((module) => module.secretsConfig())
-    )
+    const { secretsConfig } = await import("./features/secrets")
+    composition.append(secretsConfig())
   }
 
   if (config?.features?.compat) {
-    composition.append(
-      import("./features/compat").then((module) => module.compatConfig())
-    )
+    const { compatConfig } = await import("./features/compat")
+    composition.append(compatConfig())
   }
 
   if (config?.language?.typescript) {
+    const { typescriptConfig } = await import("./languages/typescript")
     composition.append(
-      import("./languages/typescript").then((module) =>
-        module.typescriptConfig(
-          configResolver(config.language.typescript, typescriptDefaultConfig)
-        )
+      typescriptConfig(
+        configResolver(config.language.typescript, typescriptDefaultConfig)
       )
     )
   }
 
   if (config?.language?.markdown) {
+    const { markdownConfig } = await import("./languages/markdown")
     composition.append(
-      import("./languages/markdown").then((module) =>
-        module.markdownConfig(
-          configResolver(config.language.markdown, markdownDefaultConfig)
-        )
+      markdownConfig(
+        configResolver(config.language.markdown, markdownDefaultConfig)
       )
     )
   }
 
   if (config?.language?.yaml) {
-    composition.append(
-      import("./languages/yaml").then((module) =>
-        module.yamlConfig(yamlConfigResolver(config))
-      )
-    )
+    const { yamlConfig } = await import("./languages/yaml")
+    composition.append(yamlConfig(yamlConfigResolver(config)))
   }
 
   if (config?.language?.json) {
-    composition.append(
-      import("./languages/json").then((module) =>
-        module.jsonConfig(jsonConfigResolver(config))
-      )
-    )
+    const { jsonConfig } = await import("./languages/json")
+    composition.append(jsonConfig(jsonConfigResolver(config)))
   }
 
   if (config?.frameworks?.node) {
+    const { nodeConfig } = await import("./frameworks/node")
     composition.append(
-      import("./frameworks/node").then((module) =>
-        module.nodeConfig(
-          configResolver(config.frameworks.node, nodeDefaultConfig)
-        )
-      )
+      nodeConfig(configResolver(config.frameworks.node, nodeDefaultConfig))
     )
   }
 
   if (config?.frameworks?.playwright) {
-    composition.append(
-      import("./frameworks/playwright").then((module) =>
-        module.playwrightConfig(config.frameworks.playwright)
-      )
-    )
+    const { playwrightConfig } = await import("./frameworks/playwright")
+    composition.append(playwrightConfig(config.frameworks.playwright))
   }
 
   if (config?.frameworks?.vitest) {
-    composition.append(
-      import("./frameworks/vitest").then((module) =>
-        module.vitestConfig(vitestConfigResolver(config))
-      )
-    )
+    const { vitestConfig } = await import("./frameworks/vitest")
+    composition.append(vitestConfig(vitestConfigResolver(config)))
   }
 
   return composition
