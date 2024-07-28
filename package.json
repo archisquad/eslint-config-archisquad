@@ -20,8 +20,8 @@
     }
   },
   "scripts": {
-    "lint": "eslint --fix .",
-    "format": "prettier --write .",
+    "build": "unbuild",
+    "lint": "eslint .",
     "prepare": "husky"
   },
   "keywords": [
