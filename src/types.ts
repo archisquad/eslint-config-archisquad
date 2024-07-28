@@ -1,8 +1,6 @@
 import type { Linter } from "eslint"
 
 type Flag = boolean
-type Paths = string | string[]
-type FlagOrPaths = Flag | Paths
 export type FlagOrConfig<TConfig> = Flag | TConfig
 
 type FactoryConfigArgs<T> = T extends undefined ? [] : [config: T]
@@ -50,7 +48,7 @@ export type VitestConfigInput = Omit<VitestConfig, "typescript">
 export type Config = {
   features: {
     promise: Flag
-    secrets: FlagOrPaths
+    secrets: Flag
     compat: Flag
   }
   language: {
@@ -62,7 +60,6 @@ export type Config = {
   prettier: Flag
   frameworks: {
     node: FlagOrConfig<NodeConfig>
-    vue: FlagOrPaths
     vitest: VitestConfigInput
     playwright: PlaywrightConfig
   }
