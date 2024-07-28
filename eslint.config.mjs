@@ -1,13 +1,26 @@
-import { configFactory } from './dist/index.mjs';
+import { configFactory } from "./dist/index.mjs"
 
-export default await configFactory({
-  prettier: true,
-  features: {
-    promise: true,
-    secrets: true,
-    compat: true,
+export default [
+  ...(await configFactory({
+    prettier: true,
+    features: {
+      promise: true,
+    },
+    language: {
+      typescript: true,
+      markdown: true,
+    },
+  })),
+  {
+    files: ["README.md/*.js"],
+    rules: {
+      "no-undef": "off",
+    },
   },
-  language: {
-    typescript: true,
-  }
-})
+  {
+    files: ["commitlint.config.js"],
+    rules: {
+      "no-undef": "off",
+    },
+  },
+]
