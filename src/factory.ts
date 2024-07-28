@@ -1,7 +1,7 @@
 import { ecmaConfig } from "./common/ecma";
 import { unicornConfig } from "./common/unicorn";
 import type { Config } from "./types";
-import { configResolver, jsonConfigResolver, yamlConfigResolver } from "./utils/configResolver";
+import { configResolver, jsonConfigResolver, vitestConfigResolver, yamlConfigResolver } from "./utils/configResolver";
 import { markdownDefaultConfig, nodeDefaultConfig, typescriptDefaultConfig } from "./utils/defaultConfigs";
 import gitignore from "eslint-config-flat-gitignore";
 import { composer } from "eslint-flat-config-utils";
@@ -78,6 +78,22 @@ export function configFactory(config: Config) {
         module.nodeConfig(
           configResolver(config.frameworks.node, nodeDefaultConfig)
         )
+      )
+    )
+  }
+
+  if (config?.frameworks?.playwright) {
+    composition.append(
+      import("./frameworks/playwright").then((module) =>
+        module.playwrightConfig(config.frameworks.playwright)
+      )
+    )
+  }
+
+  if (config?.frameworks?.vitest) {
+    composition.append(
+      import("./frameworks/vitest").then((module) =>
+        module.vitestConfig(vitestConfigResolver(config))
       )
     )
   }

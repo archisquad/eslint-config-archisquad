@@ -1,4 +1,4 @@
-import { Config, FlagOrConfig, JsonConfig, YamlConfig, YamlConfigInput } from "../types";
+import { Config, FlagOrConfig, JsonConfig, VitestConfig, YamlConfig, YamlConfigInput } from "../types";
 import { jsonDefaultConfig, yamlDefaultConfig } from "./defaultConfigs";
 
 export function configResolver<TConfig>(value: FlagOrConfig<TConfig>, defaultConfig: TConfig) {
@@ -30,5 +30,12 @@ export function jsonConfigResolver(config: Config): JsonConfig {
   return {
     files: (config.language.json as JsonConfig).files,
     prettier: config?.prettier ?? false,
+  }
+}
+
+export function vitestConfigResolver(config: Config): VitestConfig {
+  return {
+    files: config.frameworks.vitest?.files,
+    typescript: config.language.typescript == true,
   }
 }

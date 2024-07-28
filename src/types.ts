@@ -35,6 +35,17 @@ export type JsonConfig = {
 
 export type JsonConfigInput = Omit<JsonConfig, "prettier">
 
+export type PlaywrightConfig = {
+  files: string[];
+}
+
+export type VitestConfig = {
+  files: string[];
+  typescript: boolean;
+}
+
+export type VitestConfigInput = Omit<VitestConfig, "typescript">
+
 export type Config = {
   features: {
     promise: Flag
@@ -51,7 +62,7 @@ export type Config = {
   frameworks: {
     node: FlagOrConfig<NodeConfig>
     vue: FlagOrPaths
-    vitest: Paths
-    playwright: Paths
+    vitest: VitestConfigInput
+    playwright: PlaywrightConfig
   }
 }
