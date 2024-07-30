@@ -2,20 +2,26 @@ import {
   Config,
   FlagOrConfig,
   JsonConfig,
+  PerfectionistConfig,
   VitestConfig,
   YamlConfig,
 } from "../types"
-import { jsonDefaultConfig, yamlDefaultConfig } from "./defaultConfigs"
+import {
+  jsonDefaultConfig,
+  perfectionistDefaultConfig,
+  yamlDefaultConfig,
+} from "./defaultConfigs"
+import defu from "defu"
 
 export function configResolver<TConfig>(
-  value: FlagOrConfig<TConfig>,
+  value: FlagOrConfig<NoInfer<TConfig>>,
   defaultConfig: TConfig
 ): TConfig {
-  return typeof value === "boolean" ? defaultConfig : value
+  return typeof value === "boolean" ? defaultConfig : (value as TConfig)
 }
 
 export function yamlConfigResolver(config: Config): YamlConfig {
-  if (config.language.yaml === true) {
+  if (config?.language?.yaml === true) {
     return {
       ...yamlDefaultConfig,
       prettier: config?.prettier ?? false,
@@ -23,13 +29,13 @@ export function yamlConfigResolver(config: Config): YamlConfig {
   }
 
   return {
-    files: (config.language.yaml as YamlConfig).files,
+    files: (config?.language?.yaml as YamlConfig).files,
     prettier: config?.prettier ?? false,
   }
 }
 
 export function jsonConfigResolver(config: Config): JsonConfig {
-  if (config.language.json === true) {
+  if (config?.language?.json === true) {
     return {
       ...jsonDefaultConfig,
       prettier: config?.prettier ?? jsonDefaultConfig.prettier,
@@ -37,14 +43,22 @@ export function jsonConfigResolver(config: Config): JsonConfig {
   }
 
   return {
-    files: (config.language.json as JsonConfig).files,
+    files: (config?.language?.json as JsonConfig).files,
     prettier: config?.prettier ?? false,
   }
 }
 
 export function vitestConfigResolver(config: Config): VitestConfig {
   return {
-    files: config.frameworks.vitest?.files,
-    typescript: config.language.typescript == true,
+    files: config?.frameworks?.vitest?.files ?? [],
+    typescript: config?.language?.typescript == true,
   }
+}
+
+export function perfectionistConfigResolver(
+  config: Config
+): PerfectionistConfig {
+  const inputConfig = config?.options?.perfectionist ?? {}
+
+  return defu(perfectionistDefaultConfig, inputConfig)
 }

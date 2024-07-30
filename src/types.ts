@@ -1,7 +1,8 @@
 import type { Linter } from "eslint"
+import type { PartialDeep } from "type-fest"
 
 type Flag = boolean
-export type FlagOrConfig<TConfig> = Flag | TConfig
+export type FlagOrConfig<TConfig> = Flag | PartialDeep<TConfig>
 
 type FactoryConfigArgs<T> = T extends undefined ? [] : [config: T]
 export type FactoryConfig<T = undefined> = (
@@ -45,7 +46,59 @@ export type VitestConfig = {
 
 export type VitestConfigInput = Omit<VitestConfig, "typescript">
 
-export type Config = {
+type PerfectionistGroup = (string | string[])[]
+type PerfectionistCustomGroup = {
+  value?: Record<string, string | string[]>
+  type?: Record<string, string | string[]>
+}
+
+type PerfectionistIntersectionAndUnionTypesGroup =
+  | "conditional"
+  | "intersection"
+  | "union"
+  | "operator"
+  | "literal"
+  | "tuple"
+  | "function"
+  | "object"
+  | "import"
+  | "keyword"
+  | "nullish"
+  | "unknown"
+
+export type PerfectionistConfig = {
+  order: "asc" | "desc"
+  ignoreCase: boolean
+  sortType: "alphabetical" | "line-length" | "natural"
+  importSort: {
+    internalPattern: string[]
+    newlinesBetween: "ignore" | "always" | "never"
+    customGroups: PerfectionistCustomGroup
+    groups: PerfectionistGroup
+  }
+  interfaceSort: {
+    ignorePattern: string[]
+    partitionByNewLine: boolean
+    groups: PerfectionistGroup
+    customGroups: PerfectionistCustomGroup
+  }
+  objectTypesSort: {
+    partitionByNewLine: boolean
+  }
+  objectSort: {
+    partitionByNewLine: boolean
+    groups: PerfectionistGroup
+    customGroups: PerfectionistCustomGroup
+  }
+  intersectionAndUnionTypesSort: {
+    groups: (
+      | PerfectionistIntersectionAndUnionTypesGroup
+      | PerfectionistIntersectionAndUnionTypesGroup[]
+    )[]
+  }
+}
+
+export type Config = PartialDeep<{
   features: {
     promise: Flag
     secrets: Flag
@@ -63,4 +116,7 @@ export type Config = {
     vitest: VitestConfigInput
     playwright: PlaywrightConfig
   }
-}
+  options: {
+    perfectionist: PerfectionistConfig
+  }
+}>
