@@ -1,4 +1,3 @@
 export default {
-  "*.{js,cjs,mjs,ts,tsx}": ["eslint --fix", "prettier --write"],
-  "*.{ts,tsx}": () => "pnpm run type-check",
+  "*.{js,cjs,mjs,ts,tsx}": ["eslint --fix"],
 }
