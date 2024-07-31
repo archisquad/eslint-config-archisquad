@@ -1,7 +1,11 @@
+import gitignore from "eslint-config-flat-gitignore"
+import { composer } from "eslint-flat-config-utils"
+
+import type { Config } from "./types"
+
 import { ecmaConfig } from "./common/ecma"
 import { perfectionistConfig } from "./common/perfectionist"
 import { unicornConfig } from "./common/unicorn"
-import type { Config } from "./types"
 import {
   configResolver,
   jsonConfigResolver,
@@ -14,8 +18,6 @@ import {
   nodeDefaultConfig,
   typescriptDefaultConfig,
 } from "./utils/defaultConfigs"
-import gitignore from "eslint-config-flat-gitignore"
-import { composer } from "eslint-flat-config-utils"
 
 export async function configFactory(
   config: Config = {}

@@ -1,6 +1,8 @@
-import type { FactoryConfig, PlaywrightConfig } from "../types"
 import playwright from "eslint-plugin-playwright"
+
 import type { PartialDeep } from "type-fest"
+
+import type { FactoryConfig, PlaywrightConfig } from "../types"
 
 export const playwrightConfig: FactoryConfig<PartialDeep<PlaywrightConfig>> = (
   config
@@ -10,8 +12,8 @@ export const playwrightConfig: FactoryConfig<PartialDeep<PlaywrightConfig>> = (
   }
 
   return {
-    name: "frameworks/playwright",
     files: config.files,
+    name: "frameworks/playwright",
     ...playwright.configs["flat/recommended"],
     rules: {
       "playwright/no-duplicate-hooks": "error",

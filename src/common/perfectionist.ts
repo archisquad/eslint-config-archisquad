@@ -1,6 +1,8 @@
-import type { FactoryConfig, PerfectionistConfig } from "../types"
-import type { ESLint } from "eslint"
 import perfectionistPlugin from "eslint-plugin-perfectionist"
+
+import type { ESLint } from "eslint"
+
+import type { FactoryConfig, PerfectionistConfig } from "../types"
 
 export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
   config
@@ -13,19 +15,15 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
     "perfectionist/sort-array-includes": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
-        ignoreCase: config.ignoreCase,
         groupKind: "spreads-first",
+        ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-classes": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
-        ignoreCase: config.ignoreCase,
-        partitionByComment: false,
         groups: [
           "index-signature",
           "static-property",
@@ -38,122 +36,126 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
           "method",
           "unknown",
         ],
+        ignoreCase: config.ignoreCase,
+        order: config.order,
+        partitionByComment: false,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-enums": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
         ignoreCase: config.ignoreCase,
+        order: config.order,
         partitionByComment: true,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-exports": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
         ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-imports": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
+        customGroups: config.importSort.customGroups,
+        environment: "node",
+        groups: config.importSort.groups,
         ignoreCase: config.ignoreCase,
         internalPattern: config.importSort.internalPattern,
         newlinesBetween: config.importSort.newlinesBetween,
-        groups: config.importSort.groups,
-        customGroups: config.importSort.customGroups,
-        environment: "node",
+        order: config.order,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-interfaces": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
-        ignoreCase: config.ignoreCase,
-        ignorePattern: config.interfaceSort.ignorePattern,
-        partitionByNewLine: config.interfaceSort.partitionByNewLine,
+        customGroups: config.interfaceSort.customGroups,
         groupKind: "required-first",
         groups: config.interfaceSort.groups,
-        customGroups: config.interfaceSort.customGroups,
-      },
-    ],
-    "perfectionist/sort-object-types": [
-      "error",
-      {
-        type: config.sortType,
-        order: config.order,
         ignoreCase: config.ignoreCase,
-        partitionByNewLine: config.objectTypesSort.partitionByNewLine,
+        ignorePattern: config.interfaceSort.ignorePattern,
+        order: config.order,
+        partitionByNewLine: config.interfaceSort.partitionByNewLine,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-intersection-types": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
-        ignoreCase: config.ignoreCase,
         groups: config.intersectionAndUnionTypesSort.groups,
-      },
-    ],
-    "perfectionist/sort-union-types": [
-      "error",
-      {
-        type: config.sortType,
-        order: config.order,
         ignoreCase: config.ignoreCase,
-        groups: config.intersectionAndUnionTypesSort.groups,
+        order: config.order,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-maps": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
         ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-named-exports": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
-        ignoreCase: config.ignoreCase,
         groupKind: "types-first",
+        ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
+      },
+    ],
+    "perfectionist/sort-object-types": [
+      "error",
+      {
+        ignoreCase: config.ignoreCase,
+        order: config.order,
+        partitionByNewLine: config.objectTypesSort.partitionByNewLine,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-objects": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
+        customGroups: config.objectSort.customGroups,
+        groups: config.objectSort.groups,
         ignoreCase: config.ignoreCase,
+        order: config.order,
         partitionByComment: false,
         partitionByNewLine: config.objectSort.partitionByNewLine,
         styledComponents: false,
-        groups: config.objectSort.groups,
-        customGroups: config.objectSort.customGroups,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-switch-case": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
         ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
+      },
+    ],
+    "perfectionist/sort-union-types": [
+      "error",
+      {
+        groups: config.intersectionAndUnionTypesSort.groups,
+        ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
       },
     ],
     "perfectionist/sort-variable-declarations": [
       "error",
       {
-        type: config.sortType,
-        order: config.order,
         ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
       },
     ],
   },

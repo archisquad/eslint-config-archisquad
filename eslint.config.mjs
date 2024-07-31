@@ -2,14 +2,14 @@ import { configFactory } from "./dist/index.mjs"
 
 export default [
   ...(await configFactory({
-    prettier: true,
     features: {
       promise: true,
     },
     language: {
-      typescript: true,
       markdown: true,
+      typescript: true,
     },
+    prettier: true,
   })),
   {
     files: ["README.md/*.js"],

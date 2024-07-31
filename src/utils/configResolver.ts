@@ -1,3 +1,5 @@
+import defu from "defu"
+
 import {
   Config,
   FlagOrConfig,
@@ -11,7 +13,6 @@ import {
   perfectionistDefaultConfig,
   yamlDefaultConfig,
 } from "./defaultConfigs"
-import defu from "defu"
 
 export function configResolver<TConfig>(
   value: FlagOrConfig<NoInfer<TConfig>>,

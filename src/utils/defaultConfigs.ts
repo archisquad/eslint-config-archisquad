@@ -5,6 +5,7 @@ import type {
   TypescriptConfig,
   YamlConfig,
 } from "../types"
+
 import {
   JSON_FILES,
   JS_FILES,
@@ -36,12 +37,9 @@ export const jsonDefaultConfig: JsonConfig = {
 }
 
 export const perfectionistDefaultConfig: PerfectionistConfig = {
-  order: "asc",
   ignoreCase: true,
-  sortType: "alphabetical",
   importSort: {
-    internalPattern: ["@/**"],
-    newlinesBetween: "always",
+    customGroups: {},
     groups: [
       ["builtin", "external"],
       "type",
@@ -51,21 +49,14 @@ export const perfectionistDefaultConfig: PerfectionistConfig = {
       ["parent", "sibling", "index"],
       ["object", "unknown"],
     ],
-    customGroups: {},
+    internalPattern: ["@/**"],
+    newlinesBetween: "always",
   },
   interfaceSort: {
+    customGroups: {},
+    groups: [],
     ignorePattern: [],
     partitionByNewLine: true,
-    groups: [],
-    customGroups: {},
-  },
-  objectTypesSort: {
-    partitionByNewLine: true,
-  },
-  objectSort: {
-    partitionByNewLine: true,
-    groups: [],
-    customGroups: {},
   },
   intersectionAndUnionTypesSort: {
     groups: [
@@ -79,4 +70,14 @@ export const perfectionistDefaultConfig: PerfectionistConfig = {
       "unknown",
     ],
   },
+  objectSort: {
+    customGroups: {},
+    groups: [],
+    partitionByNewLine: true,
+  },
+  objectTypesSort: {
+    partitionByNewLine: true,
+  },
+  order: "asc",
+  sortType: "alphabetical",
 }

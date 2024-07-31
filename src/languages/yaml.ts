@@ -1,6 +1,7 @@
-import type { FactoryConfig, YamlConfig } from "../types"
 import ymlPlugin from "eslint-plugin-yml"
 import ymlParser from "yaml-eslint-parser"
+
+import type { FactoryConfig, YamlConfig } from "../types"
 
 export const yamlConfig: FactoryConfig<YamlConfig> = (config) => {
   const formattingRules = config.prettier
@@ -32,18 +33,21 @@ export const yamlConfig: FactoryConfig<YamlConfig> = (config) => {
 
   return {
     files: config.files,
+    languageOptions: {
+      parser: ymlParser,
+    },
     plugins: {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       yml: ymlPlugin as any,
-    },
-    languageOptions: {
-      parser: ymlParser,
     },
     rules: {
       // base rules
       "no-irregular-whitespace": "off",
       "no-unused-vars": "off",
       "spaced-comment": "off",
+      // standard rules
+      "yml/block-mapping": "error",
+      "yml/block-sequence": "error",
       // recommended rules
       "yml/no-empty-document": "error",
       "yml/no-empty-key": "error",
@@ -51,12 +55,9 @@ export const yamlConfig: FactoryConfig<YamlConfig> = (config) => {
       "yml/no-empty-sequence-entry": "error",
       "yml/no-irregular-whitespace": "error",
       "yml/no-tab-indent": "error",
-      "yml/vue-custom-block/no-parsing-error": "error",
-      // standard rules
-      "yml/block-mapping": "error",
-      "yml/block-sequence": "error",
       "yml/plain-scalar": "error",
       "yml/spaced-comment": "error",
+      "yml/vue-custom-block/no-parsing-error": "error",
       ...formattingRules,
     },
   }

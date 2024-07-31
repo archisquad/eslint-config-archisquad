@@ -48,47 +48,37 @@ export type VitestConfigInput = Omit<VitestConfig, "typescript">
 
 type PerfectionistGroup = (string | string[])[]
 type PerfectionistCustomGroup = {
-  value?: Record<string, string | string[]>
   type?: Record<string, string | string[]>
+  value?: Record<string, string | string[]>
 }
 
 type PerfectionistIntersectionAndUnionTypesGroup =
   | "conditional"
-  | "intersection"
-  | "union"
-  | "operator"
-  | "literal"
-  | "tuple"
   | "function"
-  | "object"
   | "import"
+  | "intersection"
   | "keyword"
+  | "literal"
   | "nullish"
+  | "object"
+  | "operator"
+  | "tuple"
+  | "union"
   | "unknown"
 
 export type PerfectionistConfig = {
-  order: "asc" | "desc"
   ignoreCase: boolean
-  sortType: "alphabetical" | "line-length" | "natural"
   importSort: {
-    internalPattern: string[]
-    newlinesBetween: "ignore" | "always" | "never"
     customGroups: PerfectionistCustomGroup
     groups: PerfectionistGroup
+    internalPattern: string[]
+    newlinesBetween: "always" | "ignore" | "never"
   }
   interfaceSort: {
+    customGroups: PerfectionistCustomGroup
+    groups: PerfectionistGroup
     ignorePattern: string[]
     partitionByNewLine: boolean
-    groups: PerfectionistGroup
-    customGroups: PerfectionistCustomGroup
-  }
-  objectTypesSort: {
-    partitionByNewLine: boolean
-  }
-  objectSort: {
-    partitionByNewLine: boolean
-    groups: PerfectionistGroup
-    customGroups: PerfectionistCustomGroup
   }
   intersectionAndUnionTypesSort: {
     groups: (
@@ -96,27 +86,37 @@ export type PerfectionistConfig = {
       | PerfectionistIntersectionAndUnionTypesGroup[]
     )[]
   }
+  objectSort: {
+    customGroups: PerfectionistCustomGroup
+    groups: PerfectionistGroup
+    partitionByNewLine: boolean
+  }
+  objectTypesSort: {
+    partitionByNewLine: boolean
+  }
+  order: "asc" | "desc"
+  sortType: "alphabetical" | "line-length" | "natural"
 }
 
 export type Config = PartialDeep<{
   features: {
+    compat: Flag
     promise: Flag
     secrets: Flag
-    compat: Flag
   }
-  language: {
-    typescript: FlagOrConfig<TypescriptConfig>
-    yaml: FlagOrConfig<YamlConfigInput>
-    json: FlagOrConfig<JsonConfigInput>
-    markdown: FlagOrConfig<MarkdownConfig>
-  }
-  prettier: Flag
   frameworks: {
     node: FlagOrConfig<NodeConfig>
-    vitest: VitestConfigInput
     playwright: PlaywrightConfig
+    vitest: VitestConfigInput
+  }
+  language: {
+    json: FlagOrConfig<JsonConfigInput>
+    markdown: FlagOrConfig<MarkdownConfig>
+    typescript: FlagOrConfig<TypescriptConfig>
+    yaml: FlagOrConfig<YamlConfigInput>
   }
   options: {
     perfectionist: PerfectionistConfig
   }
+  prettier: Flag
 }>

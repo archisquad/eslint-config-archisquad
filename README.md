@@ -78,8 +78,8 @@ module.exports = {
 
   overrides: [
     {
-      files: ["**/*.{test,integration}.{js,ts}", "**/*Builder.ts"],
       extends: ["archisquad/vitest"],
+      files: ["**/*.{test,integration}.{js,ts}", "**/*Builder.ts"],
     },
   ],
 }
@@ -102,8 +102,8 @@ module.exports = {
 
   overrides: [
     {
-      files: ["**/*.spec.ts"],
       extends: ["archisquad/playwright"],
+      files: ["**/*.spec.ts"],
     },
   ],
 }
