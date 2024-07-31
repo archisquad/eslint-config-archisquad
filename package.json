@@ -76,7 +76,7 @@
     "typescript": "^5.0.0"
   },
   "devDependencies": {
-    "@archisquad/prettier-config": "1.1.0",
+    "@archisquad/prettier-config": "2.0.0",
     "@changesets/cli": "2.27.7",
     "unbuild": "2.0.0",
     "@commitlint/cli": "19.3.0",
