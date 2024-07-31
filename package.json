@@ -50,7 +50,7 @@
   "prettier": "@archisquad/prettier-config",
   "dependencies": {
     "eslint": "9.8.0",
-    "eslint-plugin-unicorn": "54.0.0",
+    "eslint-plugin-unicorn": "55.0.0",
     "eslint-plugin-prettier": "5.2.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-promise": "6.6.0",
