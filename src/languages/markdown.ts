@@ -1,6 +1,7 @@
-import { FactoryConfig, MarkdownConfig } from "../types"
 // @ts-expect-error -- no types available
 import markdownPlugin from "eslint-plugin-markdown"
+
+import { FactoryConfig, MarkdownConfig } from "../types"
 
 export const markdownConfig: FactoryConfig<MarkdownConfig> = (config) => ({
   files: config.files,

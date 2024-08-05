@@ -1,5 +1,6 @@
-import { FactoryConfig } from "../types"
 import js from "@eslint/js"
+
+import { FactoryConfig } from "../types"
 
 export const ecmaConfig: FactoryConfig = () => ({
   name: "common/ecma",

@@ -1,15 +1,12 @@
 export default {
-  entries: [
-    {
-      input: "src/index.ts",
-      builder: "rollup",
-    },
-  ],
-  rollup: {
-    emitCJS: true,
-  },
   clean: true,
   declaration: true,
+  entries: [
+    {
+      builder: "rollup",
+      input: "src/index.ts",
+    },
+  ],
   externals: [
     "yaml-eslint-parser",
     "jsonc-eslint-parser",
@@ -21,6 +18,9 @@ export default {
     "acorn",
     "acorn-jsx",
   ],
-  outDir: "dist",
   failOnWarn: false,
+  outDir: "dist",
+  rollup: {
+    emitCJS: true,
+  },
 }

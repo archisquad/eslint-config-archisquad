@@ -1,9 +1,15 @@
-import { ecmaConfig } from "./common/ecma"
-import { unicornConfig } from "./common/unicorn"
+import gitignore from "eslint-config-flat-gitignore"
+import { composer } from "eslint-flat-config-utils"
+
 import type { Config } from "./types"
+
+import { ecmaConfig } from "./common/ecma"
+import { perfectionistConfig } from "./common/perfectionist"
+import { unicornConfig } from "./common/unicorn"
 import {
   configResolver,
   jsonConfigResolver,
+  perfectionistConfigResolver,
   vitestConfigResolver,
   yamlConfigResolver,
 } from "./utils/configResolver"
@@ -12,15 +18,18 @@ import {
   nodeDefaultConfig,
   typescriptDefaultConfig,
 } from "./utils/defaultConfigs"
-import gitignore from "eslint-config-flat-gitignore"
-import { composer } from "eslint-flat-config-utils"
 
 export async function configFactory(
-  config: Config
+  config: Config = {}
 ): Promise<ReturnType<typeof composer>> {
   const composition = composer()
 
-  composition.append(gitignore(), ecmaConfig(), unicornConfig())
+  composition.append(
+    gitignore(),
+    ecmaConfig(),
+    unicornConfig(),
+    perfectionistConfig(perfectionistConfigResolver(config))
+  )
 
   if (config?.prettier) {
     const { prettierConfig } = await import("./common/prettier")
@@ -79,7 +88,7 @@ export async function configFactory(
 
   if (config?.frameworks?.playwright) {
     const { playwrightConfig } = await import("./frameworks/playwright")
-    composition.append(playwrightConfig(config.frameworks.playwright))
+    composition.append(playwrightConfig(config?.frameworks?.playwright))
   }
 
   if (config?.frameworks?.vitest) {

@@ -1,6 +1,7 @@
-import type { FactoryConfig, JsonConfig } from "../types"
 import jsonPlugin from "eslint-plugin-jsonc"
 import jsonParser from "jsonc-eslint-parser"
+
+import type { FactoryConfig, JsonConfig } from "../types"
 
 export const jsonConfig: FactoryConfig<JsonConfig> = (config) => {
   const formattingRules = config.prettier
@@ -30,16 +31,13 @@ export const jsonConfig: FactoryConfig<JsonConfig> = (config) => {
 
   return {
     files: config.files,
-    plugin: {
-      jsonc: jsonPlugin,
-    },
     languageOptions: {
       parser: jsonParser,
     },
+    plugin: {
+      jsonc: jsonPlugin,
+    },
     rules: {
-      "strict": "off",
-      "no-unused-expressions": "off",
-      "no-unused-vars": "off",
       "jsonc/no-bigint-literals": "error",
       "jsonc/no-binary-expression": "error",
       "jsonc/no-binary-numeric-literals": "error",
@@ -52,8 +50,8 @@ export const jsonConfig: FactoryConfig<JsonConfig> = (config) => {
       "jsonc/no-nan": "error",
       "jsonc/no-number-props": "error",
       "jsonc/no-numeric-separators": "error",
-      "jsonc/no-octal-numeric-literals": "error",
       "jsonc/no-octal": "error",
+      "jsonc/no-octal-numeric-literals": "error",
       "jsonc/no-parenthesized": "error",
       "jsonc/no-plus-sign": "error",
       "jsonc/no-regexp-literals": "error",
@@ -64,6 +62,9 @@ export const jsonConfig: FactoryConfig<JsonConfig> = (config) => {
       "jsonc/no-useless-escape": "error",
       "jsonc/valid-json-number": "error",
       "jsonc/vue-custom-block/no-parsing-error": "error",
+      "no-unused-expressions": "off",
+      "no-unused-vars": "off",
+      "strict": "off",
       ...formattingRules,
     },
   }

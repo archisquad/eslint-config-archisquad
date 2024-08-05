@@ -1,30 +1,31 @@
-import type { FactoryConfig, TypescriptConfig } from "../types"
 import pluginTs from "@typescript-eslint/eslint-plugin"
 import parserTs from "@typescript-eslint/parser"
 
+import type { FactoryConfig, TypescriptConfig } from "../types"
+
 export const typescriptConfig: FactoryConfig<TypescriptConfig> = (config) => ({
-  name: "languages/typescript",
   files: config.files,
   languageOptions: {
     parser: parserTs,
   },
+  name: "languages/typescript",
   plugins: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     "@typescript-eslint": pluginTs as any,
   },
   rules: {
     ...pluginTs.configs.recommended.rules,
-    "default-param-last": "off",
+    "@typescript-eslint/array-type": "error",
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/explicit-member-accessibility": "error",
-    "@typescript-eslint/array-type": "error",
-    "@typescript-eslint/prefer-function-type": "error",
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": "error",
-    "@typescript-eslint/no-namespace": "off",
-    "no-magic-numbers": "off",
-    "@typescript-eslint/no-magic-numbers": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/no-magic-numbers": "warn",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/prefer-function-type": "error",
+    "default-param-last": "off",
+    "no-magic-numbers": "off",
+    "no-use-before-define": "off",
     "prefer-promise-reject-errors": "off",
   },
 })
