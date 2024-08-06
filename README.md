@@ -1,6 +1,6 @@
 # archisquad ESLint Config
 
-Our shareable config & rules for ESLint
+Our shareable config & rules for ESLint v9
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -15,145 +15,96 @@ repository, for, e.g. with `pnpm` or your package manager of choice:
 pnpm i -D eslint prettier eslint-config-archisquad
 ```
 
-2.Extend your local ESLint config file with archisquad config:
+2.Create your local ESLint config file with archisquad `configFactory`:
 
 ```js
-module.exports = {
-  extends: ["archisquad"],
-}
+import { configFactory } from "eslint-config-archisquad"
+
+export default await configFactory({
+  // your config goes here
+})
 ```
 
-### Without Prettier
+### Configuration
 
-When you don't want to use prettier, you can easily make a little different
-config:
+Our ESLint configuration is quite configurable, let's deep dive into the options.
 
-```js
-module.exports = {
-  extends: [
-    "archisquad/ecma",
-    "archisquad/typescript",
-    "archisquad/html",
-    "archisquad/json",
-    "archisquad/yaml",
-    "archisquad/markdown",
-  ],
-}
-```
+```ts
+import { configFactory } from "eslint-config-archisquad"
 
-### Using with Node.js
-
-When you want to use our config for Node.js based solution, please change the
-config extension to:
-
-```js
-module.exports = {
-  extends: ["archisquad/node"],
-}
-```
-
-Then, define the node engine version in `package.json`:
-
-```json
-{
-  "engines": {
-    "node": ">=14.0.0"
+export default await configFactory({
+  // Basically it's all abut enabling some plugins. All features are disabled by default.
+  features: {
+    // Enables the eslint-compat-plugin
+    compat: true,
+    // Enables the eslint-promise-plugin
+    promise: true,
+    // Enables the eslint-secrets-plugin
+    secrets: true
+  },
+  // Support for different frameworks.
+  frameworks: {
+    // You can also set to `true` if all of your files are for Node.js
+    node: {
+      // Pass the glob pattern for matching for enable Playwright config
+      files: ["server/**/*.ts"],
+    },
+    playwright: {
+      // Pass the glob pattern for matching for enable Playwright config
+      files: ["tests/**/*.e2e.ts"],
+    },
+    vitest: {
+      // Pass the glob pattern for matching for enable Playwright config
+      files: ["tests/**/*.test.ts"],
+      // Set to true if your test files are written in TypeScript
+      typescript: true,
+    }
+  },
+  // Configuration for different languages, each of them can be simply turned on, by setting
+  // true. If you want to customize the files, set an object value.
+  language: {
+    json: {
+      files: ["**/*.json"],
+    },
+    markdown: {
+      files: ["**/*.md", "**/*.mdx"],
+    },
+    typescript: {
+      files: ["**/*.ts", "**/*.tsx", "**/*.cts", "**/*.mts"],
+    },
+    yaml: {
+      files: ["**/*.yaml", "**/*.yml"],
+    },
+  },
+  // Options for plugins built-in into this ESLint config
+  options: {
+    // Setup for Perfectionist plugin
+    perfectionist: {
+      ignoreCase: true,
+      order: "asc",
+      sortType: "alphabetical"
+      // There is more advanced options available, to dig into look at the types.ts file
+    }
   }
-}
-```
-
-### Using with Vitest
-
-How do you want to structurize the unit & integration tests written using Vitest
-in your project? Even in our projects, we use different approaches. Sometimes
-unit tests have their extension, and integrations have their own. Sometimes
-there share the file extensions. To provide an elastic way to configure it, we
-created a dedicated configuration for Vitest, which you can use via `overrides`:
-
-```js
-module.exports = {
-  root: true,
-
-  extends: ["archisquad"],
-
-  overrides: [
-    {
-      extends: ["archisquad/vitest"],
-      files: ["**/*.{test,integration}.{js,ts}", "**/*Builder.ts"],
-    },
-  ],
-}
-```
-
-### Using with Playwright
-
-We use the same model as Vitest with Playwright - because sometimes End-To-End
-test suites are entirely different apps in the same monorepo and sometimes
-another repository. Still, in many projects, E2Es are together with the app's
-production code in a specific directory. So to provide flexible configuration
-for all those possibilities, we create separate config just with rules for
-Playwright. You can use it precisely on your chosen location, extension, etc.
-
-```js
-module.exports = {
-  root: true,
-
-  extends: ["archisquad"],
-
-  overrides: [
-    {
-      extends: ["archisquad/playwright"],
-      files: ["**/*.spec.ts"],
-    },
-  ],
-}
-```
-
-### Using with VSCode
-
-To get vscode-eslint support, we need to add the following in vscode settings
-(`.vscode/settings.json`).
-
-```json
-{
-  "eslint.enable": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "json",
-    "jsonc",
-    "json5",
-    "yaml",
-    "html"
-  ]
-}
+})
 ```
 
 ## Used rulesets & plugins
 
-- [eslint-comments](https://github.com/mysticatea/eslint-plugin-eslint-comments)
 - [unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
 - [compat](https://github.com/amilajack/eslint-plugin-compat)
 - [jsonc](https://github.com/ota-meshi/eslint-plugin-jsonc)
 - [yml](https://github.com/ota-meshi/eslint-plugin-yml)
 - [no-secrets](https://github.com/nickdeis/eslint-plugin-no-secrets)
-- [html-eslint](https://yeonjuan.github.io/html-eslint/docs)
-- [html](https://github.com/BenoitZugmeyer/eslint-plugin-html)
 - [markdown](https://github.com/eslint/eslint-plugin-markdown)
 - [prettier](https://github.com/prettier/eslint-plugin-prettier#recommended-configuration)
-- [no-unsanitized](https://github.com/mozilla/eslint-plugin-no-unsanitized)
 - [promise](https://github.com/eslint-community/eslint-plugin-promise)
 - [sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
 - [n](https://github.com/eslint-community/eslint-plugin-n)
-- [security](https://github.com/eslint-community/eslint-plugin-security)
-- [etc](https://github.com/cartant/eslint-plugin-etc)
-- [@microsoft/sdl](https://github.com/microsoft/eslint-plugin-sdl)
-- [write-good-comments](https://github.com/kantord/eslint-plugin-write-good-comments)
 - [vitest](https://github.com/veritem/eslint-plugin-vitest)
 - [playwright](https://github.com/playwright-community/eslint-plugin-playwright)
+- [perfectionist](https://perfectionist.dev/)
+- [eslint-config-flat-gitignore](https://github.com/antfu/eslint-config-flat-gitignore)
 
 ## Development
 
@@ -171,7 +122,7 @@ Then, create a branch, make your changes in code, commit it following
 
 After that, push it and then create a
 [Pull Request](https://github.com/archisquad/eslint-config-archisquad/pulls)
-with the target to `develop` branch.
+with the target to `main` branch.
 
 ## License
 
