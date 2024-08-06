@@ -1,10 +1,24 @@
 # eslint-config-archisquad
 
+## 2.0.0
+
+### Major Changes
+
+- 582b83d: [BREAKING]: Migrate to Flat Config & ESLint v9. Drop support for
+  Legacy Config & ESLint v8.
+
+  [ADDED]: Suport for Perfectionist Plugin.
+
 ## 1.3.0
 
 ### Minor Changes
 
-- e8a452a: Upgraded dependencies: TS support for v5.3, @html-eslint/eslint-plugin to v0.23.1, eslint-plugin-jsonc to v2.13.0, eslint-plugin-n to v16.6.2, eslint-plugin-playwright to v0.22.2, eslint-plugin-prettier to v5.1.3, eslint-plugin-security to v2.1.0, eslint-plugin-unicorn to v50.0.1, eslint-plugin-vitest to v0.3.21, eslint-plugin-yml to v1.12.2
+- e8a452a: Upgraded dependencies: TS support for v5.3,
+  @html-eslint/eslint-plugin to v0.23.1, eslint-plugin-jsonc to v2.13.0,
+  eslint-plugin-n to v16.6.2, eslint-plugin-playwright to v0.22.2,
+  eslint-plugin-prettier to v5.1.3, eslint-plugin-security to v2.1.0,
+  eslint-plugin-unicorn to v50.0.1, eslint-plugin-vitest to v0.3.21,
+  eslint-plugin-yml to v1.12.2
 
 ## 1.2.0
 
