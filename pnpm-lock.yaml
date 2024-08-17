@@ -69,8 +69,8 @@ importers:
         specifier: 1.14.0
         version: 1.14.0(eslint@9.9.0(jiti@1.21.6))
       type-fest:
-        specifier: 4.24.0
-        version: 4.24.0
+        specifier: 4.25.0
+        version: 4.25.0
     devDependencies:
       '@archisquad/prettier-config':
         specifier: 2.0.1
@@ -3226,8 +3226,8 @@ packages:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
 
-  type-fest@4.24.0:
-    resolution: {integrity: sha512-spAaHzc6qre0TlZQQ2aA/nGMe+2Z/wyGk5Z+Ru2VUfdNwT6kWO6TjevOlpebsATEG1EIQ2sOiDszud3lO5mt/Q==}
+  type-fest@4.25.0:
+    resolution: {integrity: sha512-bRkIGlXsnGBRBQRAY56UXBm//9qH4bmJfFvq83gSz41N282df+fjy8ofcEgc1sM8geNt5cl6mC2g9Fht1cs8Aw==}
     engines: {node: '>=16'}
 
   typedarray-to-buffer@3.1.5:
@@ -6619,7 +6619,7 @@ snapshots:
 
   type-fest@3.13.1: {}
 
-  type-fest@4.24.0: {}
+  type-fest@4.25.0: {}
 
   typedarray-to-buffer@3.1.5:
     dependencies:
