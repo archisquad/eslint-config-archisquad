@@ -66,10 +66,10 @@
     "eslint-config-flat-gitignore": "0.1.8",
     "type-fest": "4.25.0",
     "defu": "6.1.4",
-    "eslint-flat-config-utils": "0.3.0",
+    "eslint-flat-config-utils": "0.3.1",
     "@eslint/js": "9.9.0",
-    "@typescript-eslint/parser": "8.1.0",
-    "@typescript-eslint/eslint-plugin": "8.1.0"
+    "@typescript-eslint/parser": "8.2.0",
+    "@typescript-eslint/eslint-plugin": "8.2.0"
   },
   "peerDependencies": {
     "prettier": "^3.1.0",
