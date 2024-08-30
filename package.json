@@ -63,7 +63,7 @@
     "eslint-plugin-playwright": "1.6.2",
     "eslint-plugin-vitest": "0.5.4",
     "eslint-plugin-perfectionist": "3.3.0",
-    "eslint-config-flat-gitignore": "0.1.8",
+    "eslint-config-flat-gitignore": "0.3.0",
     "type-fest": "4.26.0",
     "defu": "6.1.4",
     "eslint-flat-config-utils": "0.3.1",
