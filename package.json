@@ -68,8 +68,8 @@
     "defu": "6.1.4",
     "eslint-flat-config-utils": "0.4.0",
     "@eslint/js": "9.10.0",
-    "@typescript-eslint/parser": "8.5.0",
-    "@typescript-eslint/eslint-plugin": "8.5.0"
+    "@typescript-eslint/parser": "8.6.0",
+    "@typescript-eslint/eslint-plugin": "8.6.0"
   },
   "peerDependencies": {
     "prettier": "^3.1.0",
