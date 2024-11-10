@@ -5,46 +5,42 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
-permissions:
-  contents: write
-  issues: write
-  pull-requests: write
-
 jobs:
   release:
-    name: Releasing
-
+    name: 🚀 Releasing
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     strategy:
       matrix:
         node-version: [22.11.0]
-
     steps:
-      - name: Checkout
+      - name: 📥 Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Init pnpm (latest)
+      - name: 📦 Init pnpm (latest)
         uses: pnpm/action-setup@v4
         with:
           version: latest
 
-      - name: Use Node.js (v${{ matrix.node-version }})
+      - name: 🛠️ Use Node.js (v${{ matrix.node-version }})
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
 
-      - name: Install dependencies
+      - name: 📚 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
+      - name: 🏗️ Build
         run: pnpm build
 
-      - name: Publish to npm
+      - name: 🚀 Publish to npm
         id: changesets-main
         uses: changesets/action@v1
         with:

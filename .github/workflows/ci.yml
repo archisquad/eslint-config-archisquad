@@ -11,8 +11,8 @@ env:
   PNPM_VERSION: 9.12.3
 
 jobs:
-  release:
-    name: Releasing
+  validating:
+    name: 🚀 Validating PR
 
     runs-on: ubuntu-latest
 
@@ -21,28 +21,28 @@ jobs:
         node-version: [18.18.2, 20.16.0, 22.11.0]
 
     steps:
-      - name: Checkout
+      - name: 📥 Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Init pnpm (latest)
+      - name: 📦 Init pnpm (latest)
         uses: pnpm/action-setup@v4
         with:
           version: ${{ env.PNPM_VERSION }}
 
-      - name: Use Node.js (v${{ matrix.node-version }})
+      - name: 🛠️ Use Node.js (v${{ matrix.node-version }})
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
 
-      - name: Install dependencies
+      - name: 📚 Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
+      - name: 🏗️ Build
         run: pnpm build
 
-      - name: Lint
+      - name: 🧹 Lint
         run: pnpm lint
