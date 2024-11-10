@@ -1,4 +1,4 @@
-import vitestPlugin from "eslint-plugin-vitest"
+import vitestPlugin from "@vitest/eslint-plugin"
 
 import type { FactoryConfig, VitestConfig } from "../types"
 
