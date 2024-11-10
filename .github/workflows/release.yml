@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.18.2]
+        node-version: [22.11.0]
 
     steps:
       - name: Checkout
@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
 
       - name: Init pnpm (latest)
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: latest
 
