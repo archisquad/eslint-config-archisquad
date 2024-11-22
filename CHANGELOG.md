@@ -1,5 +1,13 @@
 # eslint-config-archisquad
 
+## 2.3.0
+
+### Minor Changes
+
+- 680473a: **[ADDED]**: Support for globals
+- 8b2f2cb: **[ADDED]**: Re-export the `composer` and `concat` utils from
+  `eslint-flat-config-utils`.
+
 ## 2.2.0
 
 ### Minor Changes
