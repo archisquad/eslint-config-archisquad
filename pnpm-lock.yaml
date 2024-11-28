@@ -18,8 +18,8 @@ importers:
         specifier: 8.16.0
         version: 8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)
       '@vitest/eslint-plugin':
-        specifier: 1.1.10
-        version: 1.1.10(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)
+        specifier: 1.1.12
+        version: 1.1.12(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)
       defu:
         specifier: 6.1.4
         version: 6.1.4
@@ -58,10 +58,10 @@ importers:
         version: 2.1.0(eslint@9.15.0(jiti@1.21.6))
       eslint-plugin-prettier:
         specifier: 5.2.1
-        version: 5.2.1(@types/eslint@9.6.0)(eslint-config-prettier@9.1.0(eslint@9.15.0(jiti@1.21.6)))(eslint@9.15.0(jiti@1.21.6))(prettier@3.3.3)
+        version: 5.2.1(@types/eslint@9.6.0)(eslint-config-prettier@9.1.0(eslint@9.15.0(jiti@1.21.6)))(eslint@9.15.0(jiti@1.21.6))(prettier@3.4.1)
       eslint-plugin-promise:
-        specifier: 7.2.0
-        version: 7.2.0(eslint@9.15.0(jiti@1.21.6))
+        specifier: 7.2.1
+        version: 7.2.1(eslint@9.15.0(jiti@1.21.6))
       eslint-plugin-unicorn:
         specifier: 56.0.1
         version: 56.0.1(eslint@9.15.0(jiti@1.21.6))
@@ -72,12 +72,12 @@ importers:
         specifier: 15.12.0
         version: 15.12.0
       type-fest:
-        specifier: 4.28.0
-        version: 4.28.0
+        specifier: 4.29.0
+        version: 4.29.0
     devDependencies:
       '@archisquad/prettier-config':
         specifier: 2.0.1
-        version: 2.0.1(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.3.3))
+        version: 2.0.1(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.4.1))
       '@changesets/cli':
         specifier: 2.27.10
         version: 2.27.10
@@ -97,8 +97,8 @@ importers:
         specifier: 15.2.10
         version: 15.2.10
       prettier:
-        specifier: 3.3.3
-        version: 3.3.3
+        specifier: 3.4.1
+        version: 3.4.1
       typescript:
         specifier: 5.7.2
         version: 5.7.2
@@ -943,8 +943,8 @@ packages:
     resolution: {integrity: sha512-Ht4y38ubk4L5/U8xKUBfKNYGmvKvA1CANoxiTRMM+tOLk3lbF3DvzZCxJCRSE+2GdCMSh6zq9VZJc3asc1XuAA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@vitest/eslint-plugin@1.1.10':
-    resolution: {integrity: sha512-uScH5Kz5v32vvtQYB2iodpoPg2mGASK+VKpjlc2IUgE0+16uZKqVKi2vQxjxJ6sMCQLBs4xhBFZlmZBszsmfKQ==}
+  '@vitest/eslint-plugin@1.1.12':
+    resolution: {integrity: sha512-iv9K9fz9qRxBo9J/PGSMcLdOFIKqtFZ6THqSVG/jW8CJZFkIWLxPduCTXkbyG6FNKgL49fkv348nSgmfqCU6FA==}
     peerDependencies:
       '@typescript-eslint/utils': '>= 8.0'
       eslint: '>= 8.57.0'
@@ -1610,8 +1610,8 @@ packages:
       eslint-config-prettier:
         optional: true
 
-  eslint-plugin-promise@7.2.0:
-    resolution: {integrity: sha512-O2QBfKGRP0AHxXhZ3Lk2sFGGGw8TlMW84c+QfPX0gMnDrKJEN5SGJOICt/nR6spLvzuYO3d3nV4R3AIzdbaW7Q==}
+  eslint-plugin-promise@7.2.1:
+    resolution: {integrity: sha512-SWKjd+EuvWkYaS+uN2csvj0KoP43YTu7+phKQ5v+xw6+A0gutVX2yqCeCkC3uLCJFiPfR2dD8Es5L7yUsmvEaA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -2779,6 +2779,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prettier@3.4.1:
+    resolution: {integrity: sha512-G+YdqtITVZmOJje6QkXQWzl3fSfMxFwm1tjTyo9exhkmWSqC4Yhd1+lug++IlR2mvRVAxEDDWYkQdeSztajqgg==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   pretty-bytes@6.1.1:
     resolution: {integrity: sha512-mQUvGU6aUFQ+rNvTIAcZuWGRT9a6f6Yrg9bHs4ImKF+HZCEK+plBvnAZYSIQztknZF2qnzNtr6F8s0+IuptdlQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
@@ -3149,8 +3154,8 @@ packages:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
 
-  type-fest@4.28.0:
-    resolution: {integrity: sha512-jXMwges/FVbFRe5lTMJZVEZCrO9kI9c8k0PA/z7nF3bo0JSCCLysvokFjNPIUK/itEMas10MQM+AiHoHt/T/XA==}
+  type-fest@4.29.0:
+    resolution: {integrity: sha512-RPYt6dKyemXJe7I6oNstcH24myUGSReicxcHTvCLgzm4e0n8y05dGvcGB15/SoPRBmhlMthWQ9pvKyL81ko8nQ==}
     engines: {node: '>=16'}
 
   typescript@5.7.2:
@@ -3310,10 +3315,10 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@archisquad/prettier-config@2.0.1(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.3.3))':
+  '@archisquad/prettier-config@2.0.1(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.4.1))':
     dependencies:
       prettier: 3.3.3
-      prettier-plugin-tailwindcss: 0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.3.3))(prettier@3.3.3)
+      prettier-plugin-tailwindcss: 0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.4.1))(prettier@3.3.3)
     transitivePeerDependencies:
       - '@ianvs/prettier-plugin-sort-imports'
       - '@prettier/plugin-pug'
@@ -4069,7 +4074,7 @@ snapshots:
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
 
-  '@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.3.3)':
+  '@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.4.1)':
     dependencies:
       '@babel/generator': 7.17.7
       '@babel/parser': 7.24.8
@@ -4077,7 +4082,7 @@ snapshots:
       '@babel/types': 7.17.0
       javascript-natural-sort: 0.7.1
       lodash: 4.17.21
-      prettier: 3.3.3
+      prettier: 3.4.1
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -4234,7 +4239,7 @@ snapshots:
       '@typescript-eslint/types': 8.9.0
       eslint-visitor-keys: 3.4.3
 
-  '@vitest/eslint-plugin@1.1.10(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)':
+  '@vitest/eslint-plugin@1.1.12(@typescript-eslint/utils@8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)':
     dependencies:
       '@typescript-eslint/utils': 8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)
       eslint: 9.15.0(jiti@1.21.6)
@@ -4366,7 +4371,7 @@ snapshots:
       chalk: 5.3.0
       cli-boxes: 3.0.0
       string-width: 7.2.0
-      type-fest: 4.28.0
+      type-fest: 4.29.0
       widest-line: 5.0.0
       wrap-ansi: 9.0.0
 
@@ -4730,7 +4735,7 @@ snapshots:
 
   dot-prop@9.0.0:
     dependencies:
-      type-fest: 4.28.0
+      type-fest: 4.29.0
 
   electron-to-chromium@1.5.0: {}
 
@@ -4935,17 +4940,17 @@ snapshots:
       eslint: 9.15.0(jiti@1.21.6)
       globals: 13.24.0
 
-  eslint-plugin-prettier@5.2.1(@types/eslint@9.6.0)(eslint-config-prettier@9.1.0(eslint@9.15.0(jiti@1.21.6)))(eslint@9.15.0(jiti@1.21.6))(prettier@3.3.3):
+  eslint-plugin-prettier@5.2.1(@types/eslint@9.6.0)(eslint-config-prettier@9.1.0(eslint@9.15.0(jiti@1.21.6)))(eslint@9.15.0(jiti@1.21.6))(prettier@3.4.1):
     dependencies:
       eslint: 9.15.0(jiti@1.21.6)
-      prettier: 3.3.3
+      prettier: 3.4.1
       prettier-linter-helpers: 1.0.0
       synckit: 0.9.1
     optionalDependencies:
       '@types/eslint': 9.6.0
       eslint-config-prettier: 9.1.0(eslint@9.15.0(jiti@1.21.6))
 
-  eslint-plugin-promise@7.2.0(eslint@9.15.0(jiti@1.21.6)):
+  eslint-plugin-promise@7.2.1(eslint@9.15.0(jiti@1.21.6)):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.15.0(jiti@1.21.6))
       eslint: 9.15.0(jiti@1.21.6)
@@ -6071,15 +6076,17 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier-plugin-tailwindcss@0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.3.3))(prettier@3.3.3):
+  prettier-plugin-tailwindcss@0.6.5(@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.4.1))(prettier@3.3.3):
     dependencies:
       prettier: 3.3.3
     optionalDependencies:
-      '@trivago/prettier-plugin-sort-imports': 4.3.0(prettier@3.3.3)
+      '@trivago/prettier-plugin-sort-imports': 4.3.0(prettier@3.4.1)
 
   prettier@2.8.8: {}
 
   prettier@3.3.3: {}
+
+  prettier@3.4.1: {}
 
   pretty-bytes@6.1.1: {}
 
@@ -6410,7 +6417,7 @@ snapshots:
 
   type-fest@0.8.1: {}
 
-  type-fest@4.28.0: {}
+  type-fest@4.29.0: {}
 
   typescript@5.7.2: {}
 
