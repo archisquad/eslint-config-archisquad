@@ -57,20 +57,20 @@
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-compat": "6.0.1",
     "eslint-plugin-no-secrets": "1.1.2",
-    "eslint-plugin-n": "17.14.0",
+    "eslint-plugin-n": "17.15.0",
     "eslint-plugin-markdown": "5.1.0",
     "eslint-plugin-yml": "1.16.0",
     "eslint-plugin-jsonc": "2.18.2",
     "eslint-plugin-playwright": "2.1.0",
-    "@vitest/eslint-plugin": "1.1.14",
+    "@vitest/eslint-plugin": "1.1.15",
     "eslint-plugin-perfectionist": "3.9.1",
     "eslint-config-flat-gitignore": "0.3.0",
     "type-fest": "4.30.0",
     "defu": "6.1.4",
     "eslint-flat-config-utils": "0.4.0",
     "@eslint/js": "9.16.0",
-    "@typescript-eslint/parser": "8.17.0",
-    "@typescript-eslint/eslint-plugin": "8.17.0"
+    "@typescript-eslint/parser": "8.18.0",
+    "@typescript-eslint/eslint-plugin": "8.18.0"
   },
   "peerDependencies": {
     "prettier": "^3.1.0",
@@ -84,7 +84,7 @@
     "commitlint-config-gitmoji": "2.3.1",
     "gitmoji-cli": "9.5.0",
     "husky": "9.1.7",
-    "lint-staged": "15.2.10",
+    "lint-staged": "15.2.11",
     "prettier": "3.4.2",
     "typescript": "5.7.2"
   }
