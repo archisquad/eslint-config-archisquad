@@ -69,8 +69,8 @@
     "defu": "6.1.4",
     "eslint-flat-config-utils": "0.4.0",
     "@eslint/js": "9.17.0",
-    "@typescript-eslint/parser": "8.19.0",
-    "@typescript-eslint/eslint-plugin": "8.19.0"
+    "@typescript-eslint/parser": "8.19.1",
+    "@typescript-eslint/eslint-plugin": "8.19.1"
   },
   "peerDependencies": {
     "prettier": "^3.1.0",
@@ -86,6 +86,6 @@
     "husky": "9.1.7",
     "lint-staged": "15.3.0",
     "prettier": "3.4.2",
-    "typescript": "5.7.2"
+    "typescript": "5.7.3"
   }
 }
