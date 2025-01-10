@@ -63,7 +63,7 @@
     "eslint-plugin-jsonc": "2.18.2",
     "eslint-plugin-playwright": "2.1.0",
     "@vitest/eslint-plugin": "1.1.24",
-    "eslint-plugin-perfectionist": "3.9.1",
+    "eslint-plugin-perfectionist": "4.6.0",
     "eslint-config-flat-gitignore": "1.0.0",
     "type-fest": "4.32.0",
     "defu": "6.1.4",
