@@ -1,4 +1,6 @@
-export default {
+import { defineBuildConfig } from "unbuild"
+
+export default defineBuildConfig({
   clean: true,
   declaration: true,
   entries: [
@@ -23,4 +25,4 @@ export default {
   rollup: {
     emitCJS: true,
   },
-}
+})
