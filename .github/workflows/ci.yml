@@ -8,7 +8,6 @@ on:
 
 env:
   CI: true
-  PNPM_VERSION: 9.13.2
 
 jobs:
   validating:
@@ -18,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.18.2, 20.16.0, 22.11.0]
+        node-version: [18.20.5, 20.18.1, 22.13.0]
 
     steps:
       - name: 📥 Checkout
@@ -28,8 +27,6 @@ jobs:
 
       - name: 📦 Init pnpm (latest)
         uses: pnpm/action-setup@v4
-        with:
-          version: ${{ env.PNPM_VERSION }}
 
       - name: 🛠️ Use Node.js (v${{ matrix.node-version }})
         uses: actions/setup-node@v4
