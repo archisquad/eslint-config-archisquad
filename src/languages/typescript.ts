@@ -15,6 +15,10 @@ export const typescriptConfig: FactoryConfig<TypescriptConfig> = (config) => ({
   },
   rules: {
     ...pluginTs.configs.recommended.rules,
+    // For perfectionist:
+    // https://perfectionist.dev/rules/sort-object-types
+    // https://perfectionist.dev/rules/sort-interfaces
+    "@typescript-eslint/adjacent-overload-signatures": "off",
     "@typescript-eslint/array-type": "error",
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/explicit-member-accessibility": "error",
@@ -23,6 +27,10 @@ export const typescriptConfig: FactoryConfig<TypescriptConfig> = (config) => ({
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-use-before-define": "error",
     "@typescript-eslint/prefer-function-type": "error",
+    // For perfectionist:
+    // https://perfectionist.dev/rules/sort-union-types
+    // https://perfectionist.dev/rules/sort-intersection-types
+    "@typescript-eslint/sort-type-constituents": "off",
     "default-param-last": "off",
     "no-magic-numbers": "off",
     "no-use-before-define": "off",

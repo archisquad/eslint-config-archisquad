@@ -7,8 +7,8 @@ import type {
 } from "../types"
 
 import {
-  JSON_FILES,
   JS_FILES,
+  JSON_FILES,
   MD_FILES,
   TS_FILES,
   YAML_FILES,
@@ -49,13 +49,20 @@ export const perfectionistDefaultConfig: PerfectionistConfig = {
       ["parent", "sibling", "index"],
       ["object", "unknown"],
     ],
-    internalPattern: ["@/**"],
+    internalPattern: ["^@/.*"],
     newlinesBetween: "always",
+    tsconfigRootDir: undefined,
   },
   interfaceSort: {
     customGroups: {},
-    groups: [],
-    ignorePattern: [],
+    groups: [
+      "required-property",
+      "property-multiline",
+      "optional-property",
+      "member",
+      "index-signature",
+      "method",
+    ],
     partitionByNewLine: true,
   },
   intersectionAndUnionTypesSort: {
@@ -68,6 +75,22 @@ export const perfectionistDefaultConfig: PerfectionistConfig = {
       ["function", "object"],
       ["import", "keyword", "nullish"],
       "unknown",
+    ],
+  },
+  modulesSort: {
+    groups: [
+      "declare-enum",
+      "export-enum",
+      "enum",
+      ["declare-interface", "declare-type"],
+      ["export-interface", "export-type"],
+      ["interface", "type"],
+      "declare-class",
+      "export-class",
+      "class",
+      "declare-function",
+      "export-function",
+      "function",
     ],
   },
   objectSort: {

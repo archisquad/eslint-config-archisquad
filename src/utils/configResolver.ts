@@ -21,20 +21,6 @@ export function configResolver<TConfig>(
   return typeof value === "boolean" ? defaultConfig : (value as TConfig)
 }
 
-export function yamlConfigResolver(config: Config): YamlConfig {
-  if (config?.language?.yaml === true) {
-    return {
-      ...yamlDefaultConfig,
-      prettier: config?.prettier ?? false,
-    }
-  }
-
-  return {
-    files: (config?.language?.yaml as YamlConfig).files,
-    prettier: config?.prettier ?? false,
-  }
-}
-
 export function jsonConfigResolver(config: Config): JsonConfig {
   if (config?.language?.json === true) {
     return {
@@ -49,6 +35,14 @@ export function jsonConfigResolver(config: Config): JsonConfig {
   }
 }
 
+export function perfectionistConfigResolver(
+  config: Config
+): PerfectionistConfig {
+  const inputConfig = config?.options?.perfectionist ?? {}
+
+  return defu(perfectionistDefaultConfig, inputConfig)
+}
+
 export function vitestConfigResolver(config: Config): VitestConfig {
   return {
     files: config?.frameworks?.vitest?.files ?? [],
@@ -56,10 +50,16 @@ export function vitestConfigResolver(config: Config): VitestConfig {
   }
 }
 
-export function perfectionistConfigResolver(
-  config: Config
-): PerfectionistConfig {
-  const inputConfig = config?.options?.perfectionist ?? {}
+export function yamlConfigResolver(config: Config): YamlConfig {
+  if (config?.language?.yaml === true) {
+    return {
+      ...yamlDefaultConfig,
+      prettier: config?.prettier ?? false,
+    }
+  }
 
-  return defu(perfectionistDefaultConfig, inputConfig)
+  return {
+    files: (config?.language?.yaml as YamlConfig).files,
+    prettier: config?.prettier ?? false,
+  }
 }

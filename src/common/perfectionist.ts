@@ -29,8 +29,8 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
           "static-property",
           "private-property",
           "property",
-          ["get-method", "set-method"],
           "constructor",
+          ["get-method", "set-method"],
           "static-method",
           "private-method",
           "method",
@@ -39,6 +39,14 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
         ignoreCase: config.ignoreCase,
         order: config.order,
         partitionByComment: false,
+        type: config.sortType,
+      },
+    ],
+    "perfectionist/sort-decorators": [
+      "error",
+      {
+        ignoreCase: config.ignoreCase,
+        order: config.order,
         type: config.sortType,
       },
     ],
@@ -59,6 +67,14 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
         type: config.sortType,
       },
     ],
+    "perfectionist/sort-heritage-clauses": [
+      "error",
+      {
+        ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
+      },
+    ],
     "perfectionist/sort-imports": [
       "error",
       {
@@ -69,6 +85,7 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
         internalPattern: config.importSort.internalPattern,
         newlinesBetween: config.importSort.newlinesBetween,
         order: config.order,
+        tsconfigRootDir: config.importSort?.tsconfigRootDir,
         type: config.sortType,
       },
     ],
@@ -76,10 +93,8 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
       "error",
       {
         customGroups: config.interfaceSort.customGroups,
-        groupKind: "required-first",
         groups: config.interfaceSort.groups,
         ignoreCase: config.ignoreCase,
-        ignorePattern: config.interfaceSort.ignorePattern,
         order: config.order,
         partitionByNewLine: config.interfaceSort.partitionByNewLine,
         type: config.sortType,
@@ -94,6 +109,14 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
         type: config.sortType,
       },
     ],
+    "perfectionist/sort-jsx-props": [
+      "error",
+      {
+        ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
+      },
+    ],
     "perfectionist/sort-maps": [
       "error",
       {
@@ -102,7 +125,25 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
         type: config.sortType,
       },
     ],
+    "perfectionist/sort-modules": [
+      "error",
+      {
+        groups: config.modulesSort.groups,
+        ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
+      },
+    ],
     "perfectionist/sort-named-exports": [
+      "error",
+      {
+        groupKind: "types-first",
+        ignoreCase: config.ignoreCase,
+        order: config.order,
+        type: config.sortType,
+      },
+    ],
+    "perfectionist/sort-named-imports": [
       "error",
       {
         groupKind: "types-first",
@@ -124,12 +165,21 @@ export const perfectionistConfig: FactoryConfig<PerfectionistConfig> = (
       "error",
       {
         customGroups: config.objectSort.customGroups,
+        destructuredObjects: true,
         groups: config.objectSort.groups,
         ignoreCase: config.ignoreCase,
         order: config.order,
         partitionByComment: false,
         partitionByNewLine: config.objectSort.partitionByNewLine,
         styledComponents: false,
+        type: config.sortType,
+      },
+    ],
+    "perfectionist/sort-sets": [
+      "error",
+      {
+        ignoreCase: config.ignoreCase,
+        order: config.order,
         type: config.sortType,
       },
     ],

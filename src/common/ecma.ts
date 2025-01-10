@@ -12,4 +12,10 @@ export const ecmaConfig: FactoryConfig = () => ({
       ...globals.es2024,
     },
   },
+  rules: {
+    // For perfectionist, https://perfectionist.dev/rules/sort-named-imports
+    "sort-imports": "off",
+    // For perfectionist, https://perfectionist.dev/rules/sort-objects
+    "sort-keys": "off",
+  },
 })
