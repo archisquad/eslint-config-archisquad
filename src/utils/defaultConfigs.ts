@@ -57,7 +57,7 @@ export const perfectionistDefaultConfig: PerfectionistConfig = {
     customGroups: {},
     groups: [
       "required-property",
-      "property-multiline",
+      "multiline-property",
       "optional-property",
       "member",
       "index-signature",
