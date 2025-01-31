@@ -1,5 +1,12 @@
 # eslint-config-archisquad
 
+## 2.4.1
+
+### Patch Changes
+
+- cc9082a: [FIXED]: Error in perfectionist default configuration. The groups has
+  a `property-multiline` entry instead of `multiline-property`.
+
 ## 2.4.0
 
 ### Minor Changes
