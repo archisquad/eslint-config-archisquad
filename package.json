@@ -65,7 +65,7 @@
     "@vitest/eslint-plugin": "1.1.36",
     "eslint-plugin-perfectionist": "4.9.0",
     "eslint-config-flat-gitignore": "2.1.0",
-    "type-fest": "4.35.0",
+    "type-fest": "4.36.0",
     "defu": "6.1.4",
     "eslint-flat-config-utils": "2.0.1",
     "@eslint/js": "9.21.0",
@@ -86,7 +86,7 @@
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
     "prettier": "3.5.2",
-    "typescript": "5.7.3"
+    "typescript": "5.8.2"
   },
   "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
 }
