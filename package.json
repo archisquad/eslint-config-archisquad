@@ -62,7 +62,7 @@
     "eslint-plugin-yml": "1.17.0",
     "eslint-plugin-jsonc": "2.19.1",
     "eslint-plugin-playwright": "2.2.0",
-    "@vitest/eslint-plugin": "1.1.37",
+    "@vitest/eslint-plugin": "1.1.38",
     "eslint-plugin-perfectionist": "4.10.1",
     "eslint-config-flat-gitignore": "2.1.0",
     "type-fest": "4.37.0",
