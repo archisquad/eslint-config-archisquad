@@ -49,7 +49,7 @@
   },
   "prettier": "@archisquad/prettier-config",
   "dependencies": {
-    "eslint": "9.23.0",
+    "eslint": "9.24.0",
     "globals": "15.15.0",
     "eslint-plugin-unicorn": "56.0.1",
     "eslint-plugin-prettier": "5.2.6",
@@ -65,10 +65,10 @@
     "@vitest/eslint-plugin": "1.1.39",
     "eslint-plugin-perfectionist": "4.11.0",
     "eslint-config-flat-gitignore": "2.1.0",
-    "type-fest": "4.39.0",
+    "type-fest": "4.39.1",
     "defu": "6.1.4",
     "eslint-flat-config-utils": "2.0.1",
-    "@eslint/js": "9.23.0",
+    "@eslint/js": "9.24.0",
     "@typescript-eslint/parser": "8.29.0",
     "@typescript-eslint/eslint-plugin": "8.29.0"
   },
@@ -86,7 +86,7 @@
     "husky": "9.1.7",
     "lint-staged": "15.5.0",
     "prettier": "3.5.3",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
 }
