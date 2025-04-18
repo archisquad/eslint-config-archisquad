@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@archisquad/prettier-config": "2.0.1",
-    "@changesets/cli": "2.29.1",
+    "@changesets/cli": "2.29.2",
     "unbuild": "3.5.0",
     "@commitlint/cli": "19.8.0",
     "commitlint-config-gitmoji": "2.3.1",
