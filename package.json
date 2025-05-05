@@ -52,7 +52,7 @@
     "eslint": "9.26.0",
     "globals": "15.15.0",
     "eslint-plugin-unicorn": "56.0.1",
-    "eslint-plugin-prettier": "5.2.6",
+    "eslint-plugin-prettier": "5.4.0",
     "eslint-config-prettier": "10.1.2",
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-compat": "6.0.2",
@@ -69,8 +69,8 @@
     "defu": "6.1.4",
     "eslint-flat-config-utils": "2.0.1",
     "@eslint/js": "9.26.0",
-    "@typescript-eslint/parser": "8.31.1",
-    "@typescript-eslint/eslint-plugin": "8.31.1"
+    "@typescript-eslint/parser": "8.32.0",
+    "@typescript-eslint/eslint-plugin": "8.32.0"
   },
   "peerDependencies": {
     "prettier": "^3.1.0",
@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@archisquad/prettier-config": "2.0.1",
-    "@changesets/cli": "2.29.2",
+    "@changesets/cli": "2.29.3",
     "unbuild": "3.5.0",
     "@commitlint/cli": "19.8.0",
     "commitlint-config-gitmoji": "2.3.1",
