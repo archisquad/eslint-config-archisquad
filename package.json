@@ -49,7 +49,7 @@
   },
   "prettier": "@archisquad/prettier-config",
   "dependencies": {
-    "eslint": "9.35.0",
+    "eslint": "9.36.0",
     "globals": "15.15.0",
     "eslint-plugin-unicorn": "56.0.1",
     "eslint-plugin-prettier": "5.5.4",
@@ -57,7 +57,7 @@
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-compat": "6.0.2",
     "eslint-plugin-no-secrets": "2.2.1",
-    "eslint-plugin-n": "17.23.0",
+    "eslint-plugin-n": "17.23.1",
     "eslint-plugin-markdown": "5.1.0",
     "eslint-plugin-yml": "1.18.0",
     "eslint-plugin-jsonc": "2.20.1",
@@ -67,8 +67,8 @@
     "eslint-config-flat-gitignore": "2.1.0",
     "type-fest": "4.41.0",
     "defu": "6.1.4",
-    "eslint-flat-config-utils": "2.1.1",
-    "@eslint/js": "9.35.0",
+    "eslint-flat-config-utils": "2.1.4",
+    "@eslint/js": "9.36.0",
     "@typescript-eslint/parser": "8.44.0",
     "@typescript-eslint/eslint-plugin": "8.44.0"
   },
