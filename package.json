@@ -62,15 +62,15 @@
     "eslint-plugin-yml": "1.19.1",
     "eslint-plugin-jsonc": "2.21.0",
     "eslint-plugin-playwright": "2.4.0",
-    "@vitest/eslint-plugin": "1.5.4",
+    "@vitest/eslint-plugin": "1.6.3",
     "eslint-plugin-perfectionist": "4.15.1",
     "eslint-config-flat-gitignore": "2.1.0",
     "type-fest": "4.41.0",
     "defu": "6.1.4",
     "eslint-flat-config-utils": "2.1.4",
     "@eslint/js": "9.39.2",
-    "@typescript-eslint/parser": "8.50.0",
-    "@typescript-eslint/eslint-plugin": "8.50.0"
+    "@typescript-eslint/parser": "8.50.1",
+    "@typescript-eslint/eslint-plugin": "8.50.1"
   },
   "peerDependencies": {
     "prettier": "^3.1.0",
