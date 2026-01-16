@@ -52,7 +52,7 @@
     "eslint": "9.39.2",
     "globals": "15.15.0",
     "eslint-plugin-unicorn": "56.0.1",
-    "eslint-plugin-prettier": "5.5.4",
+    "eslint-plugin-prettier": "5.5.5",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-compat": "6.0.2",
@@ -85,7 +85,7 @@
     "gitmoji-cli": "9.7.0",
     "husky": "9.1.7",
     "lint-staged": "15.5.2",
-    "prettier": "3.7.4",
+    "prettier": "3.8.0",
     "typescript": "5.9.3"
   },
   "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
