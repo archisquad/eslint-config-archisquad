@@ -65,7 +65,7 @@
     "@vitest/eslint-plugin": "1.6.7",
     "eslint-plugin-perfectionist": "4.15.1",
     "eslint-config-flat-gitignore": "2.1.0",
-    "type-fest": "4.41.0",
+    "type-fest": "5.4.4",
     "defu": "6.1.4",
     "eslint-flat-config-utils": "2.1.4",
     "@eslint/js": "9.39.2",
