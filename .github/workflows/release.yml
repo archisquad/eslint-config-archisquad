@@ -18,15 +18,15 @@ jobs:
       pull-requests: write
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v6.1.0
         with:
           fetch-depth: 0
 
       - name: 📦 Init pnpm (latest)
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v4.4.0
 
       - name: 🛠️ Use Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v6.5.0
         with:
           node-version-file: .nvmrc
           cache: "pnpm"
@@ -40,7 +40,7 @@ jobs:
 
       - name: 🚀 Publish to npm
         id: changesets-main
-        uses: changesets/action@v1.8.0
+        uses: changesets/action@v1.9.0
         with:
           version: pnpm exec changeset version
           publish: pnpm exec changeset publish
