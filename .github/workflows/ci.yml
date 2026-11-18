@@ -24,15 +24,15 @@ jobs:
 
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v6.1.0
         with:
           fetch-depth: 0
 
       - name: 📦 Init pnpm (latest)
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v4.4.0
 
       - name: 🛠️ Use Node.js (v${{ matrix.node-version }})
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v6.5.0
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
